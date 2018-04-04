@@ -132,6 +132,9 @@ endif
 ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes)
     OPT_DEFS += -DAUTO_SHIFT_ENABLE
     SRC += $(QUANTUM_DIR)/process_keycode/process_auto_shift.c
+    ifeq ($(strip $(AUTO_SHIFT_MODIFIERS)), yes)
+        OPT_DEFS += -DAUTO_SHIFT_MODIFIERS
+    endif
 endif
 
 ifeq ($(strip $(SERIAL_LINK_ENABLE)), yes)
@@ -155,6 +158,9 @@ endif
 ifeq ($(strip $(BACKLIGHT_ENABLE)), yes)
     ifeq ($(strip $(VISUALIZER_ENABLE)), yes)
         CIE1931_CURVE = yes
+    endif
+		ifeq ($(strip $(BACKLIGHT_CUSTOM_DRIVER)), yes)
+        OPT_DEFS += -DBACKLIGHT_CUSTOM_DRIVER
     endif
 endif
 
