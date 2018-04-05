@@ -23,6 +23,7 @@
   #include "rgblight.h"
 #endif
 
+#def NEW NEW
 
 #define wdt_intr_enable(value)   \
 __asm__ __volatile__ (  \
@@ -120,12 +121,19 @@ static void power_down(uint8_t wdto)
 }
 #endif
 
+#ifdef NEW
+__attribute__ ((weak)) void suspend_power_down_kb(void) {}
+
+#else /* not NEW */
 /** \brief Suspend power down
  *
  * FIXME: needs doc
  */
+#endif /* not NEW */
 void suspend_power_down(void)
 {
+	suspend_power_down_kb();
+
 #ifndef NO_SUSPEND_POWER_DOWN
     power_down(WDTO_15MS);
 #endif
@@ -144,12 +152,20 @@ bool suspend_wakeup_condition(void)
      return false;
 }
 
+#ifdef NEW
+__attribute__ ((weak)) void suspend_wakeup_init_kb(void) {}
+
+// run immediately after wakeup
+#else /* not NEW */
 /** \brief run immediately after wakeup
  *
  * FIXME: needs doc
  */
+#endif /* not NEW */
 void suspend_wakeup_init(void)
 {
+	suspend_wakeup_init_kb();
+
     // clear keyboard state
     clear_keyboard();
 #ifdef BACKLIGHT_ENABLE
