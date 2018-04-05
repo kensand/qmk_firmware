@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RGB] = KEYMAP(							\
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,             KC_F8,    KC_F9,   KC_F10,  KC_F11,  KC_F12 ,  \
-  KC_TRNS, RGB_SAI, RGB_VAI, RGB_SAD, RESET,   KC_VOLU,                   KC_RBRC,           KC_PGUP,  KC_UP,   KC_PGDN, KC_INS,  KC_HOME , \
+  RGB_TOG, RGB_SAI, RGB_VAI, RGB_SAD, RESET,   KC_VOLU,                   KC_RBRC,           KC_PGUP,  KC_UP,   KC_PGDN, KC_INS,  KC_HOME , \
   KC_TRNS, RGB_HUD, RGB_VAD, RGB_HUI, KC_TRNS, KC_VOLD,                   KC_TRNS,           KC_LEFT,  KC_DOWN, KC_RGHT, KC_DEL,  KC_END , \
   KC_LSFT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE,                   MAGIC_TOGGLE_NKRO, KC_TRNS,  KC_TRNS, KC_MPLY, KC_MPRV, KC_MNXT , \
   KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, MO(_RGB),KC_SPC ,MO(_NAV),MO(_NAV), KC_BSPC,           KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
