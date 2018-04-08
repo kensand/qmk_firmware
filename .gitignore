@@ -64,7 +64,14 @@ util/Win_Check_Output.txt
 !keyboards/minidox/*.eep
 
 #do not ignore Built Folder
+!Built/
 !Built/*
+!Built/*/
+!Built/*/*
+!Built/*/*/
+!Built/*/*/*
+!Built/*/*/*/
+!Built/*/*/*/*
 
 # things travis sees
 secrets.tar
