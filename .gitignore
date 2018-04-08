@@ -63,6 +63,9 @@ util/Win_Check_Output.txt
 # Do not ignore MiniDox left/right hand eeprom files
 !keyboards/minidox/*.eep
 
+#do not ignore Built Folder
+!Built/*
+
 # things travis sees
 secrets.tar
 id_rsa_*
