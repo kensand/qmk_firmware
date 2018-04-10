@@ -127,6 +127,7 @@ generate-keyboards-file:
 clean:
 	echo -n 'Deleting .build ... '
 	rm -rf $(BUILD_DIR)
+	rm $(ROOT_DIR)/*.hex
 	echo 'done'
 	exit 0
 
